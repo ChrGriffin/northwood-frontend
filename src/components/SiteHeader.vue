@@ -21,11 +21,5 @@ export default class SiteHeader extends Vue {
 
   img {
     max-width: 50%;
-    max-height: 50vh;
-  }
-
-  h1 {
-    font-size: 4.8rem;
-    letter-spacing: -0.2rem;
   }
 </style>

@@ -21,8 +21,19 @@
     margin-top: 60px;
   }
 
-  h1, h2, h3 {
+  h1, h2 {
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.05rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.05rem;
   }
 </style>
