@@ -1,8 +1,9 @@
 <template>
-    <a :href="product.url" target="_blank" class="product" :style="{backgroundImage: 'url(' + product.image + ')'}">
+    <a :href="product.url" target="_blank">
+        <div class="product" :style="{backgroundImage: 'url(' + product.image + ')'}"></div>
         <h3>
             <span class="title">{{ product.name }}</span>
-            <span class="price">{{ product.price }}</span>
+            <span class="price">${{ product.price }}</span>
         </h3>
     </a>
 </template>
@@ -13,25 +14,39 @@ import { Product as ProductInterface } from '@/repositories/Interfaces';
 
 @Component
 export default class Product extends Vue {
-    @Prop() product!: ProductInterface
+    @Prop() private product!: ProductInterface;
 }
 </script>
 
 <style scoped lang="scss">
+    a {
+        margin-bottom: 10px;
+        background-color: black;
+        text-decoration: none;
+        width: 48%;
+        color: white;
+    }
+
     .product {
-        width: 49%;
-        padding-top: 40%;
-        display: block;
+        width: 100%;
+        padding-top: 85%;
         position: relative;
         background-size: cover;
         background-position: center;
-        margin: 0 0 5px 0;
+    }
 
-        h3 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+    h3 {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+
+        span {
+            display: block;
+
+            &.price {
+                font-style: italic;
+                font-size: 0.7rem;
+            }
         }
     }
 </style>

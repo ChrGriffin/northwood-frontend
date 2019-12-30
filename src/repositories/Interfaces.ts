@@ -4,3 +4,8 @@ export interface Product {
     image: string;
     url: string;
 }
+
+export interface InstagramPost {
+    image: string;
+    url: string;
+}

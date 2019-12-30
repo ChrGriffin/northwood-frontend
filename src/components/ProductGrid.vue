@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <section>
     <h2>For Sale</h2>
-    <div class="product-grid">
-      <product v-if="!loading" v-for="product in products" :key="product.name" :product="product"></product>
+    <div v-if="!loading" class="product-grid">
+      <product v-for="product in products" :key="product.name" :product="product" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -14,19 +14,18 @@
     import Product from '@/components/Product.vue';
 
     @Component({
-      components: {Product}
+      components: {Product},
     })
     export default class ProductGrid extends Vue {
-        @Prop({default: () => new ProductRepository}) productRepository!: ProductRepository;
+        @Prop({default: () => new ProductRepository()}) private productRepository!: ProductRepository;
 
         private products: ProductInterface[] = [];
         private loading = true;
 
-        created() {
+        public created() {
             this.productRepository.get()
-                .then((products: ProductInterface[]) => {
-                  console.log(products);
-                    this.products = products;
+                .then((products) => {
+                    this.products = products as ProductInterface[];
                     this.loading = false;
                 });
         }
