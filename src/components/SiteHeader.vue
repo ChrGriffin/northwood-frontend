@@ -1,7 +1,8 @@
 <template>
   <header>
-    <img :src="require('./../assets/northwood_logo.svg')" alt="Northwood logo" />
-    <h1>Northwood</h1>
+    <h1>
+      <img :src="require('./../assets/northwood_logo.svg')" alt="Northwood logo" />
+    </h1>
   </header>
 </template>
 
@@ -20,6 +21,7 @@ export default class SiteHeader extends Vue {
   }
 
   img {
-    max-width: 50%;
+    display: inline-block;
+    width: 100%;
   }
 </style>

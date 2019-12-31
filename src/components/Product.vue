@@ -23,8 +23,7 @@ export default class Product extends Vue {
         margin-bottom: 10px;
         background-color: black;
         text-decoration: none;
-        width: 48%;
-        color: white;
+        width: calc(50% - 0.25rem);
     }
 
     .product {
@@ -36,7 +35,6 @@ export default class Product extends Vue {
     }
 
     h3 {
-        margin: 0;
         padding: 0.5rem;
         font-size: 0.8rem;
 
